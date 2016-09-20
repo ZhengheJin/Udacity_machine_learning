@@ -39,14 +39,14 @@ class QLearningAgent(Agent):
         self.cum_reward = 0
         self.action = None
 	
-	def getQvalue(self, state, action):
+    def getQvalue(self, state, action):
 		return self.qDict.get((state, action), 5.0)
 
-	def getMaxQ(self, state):
-		q = [self.getQvalue(stata, a) for a in self.possible_actions]
+    def getMaxQ(self, state):
+		q = [self.getQvalue(state, a) for a in self.possible_actions]
 		return max(q)
 	
-	def get_action(self, state):
+    def get_action(self, state):
 		if random.random() < self.epsilon:
 			action = random.choice(self.possible_actions)
 		else:
@@ -61,7 +61,7 @@ class QLearningAgent(Agent):
 
 		return action
 
-	def qlearning(self, state, action, nextState, reward):
+    def qlearning(self, state, action, nextState, reward):
 		"""
 		use Qlearning algorithm to update q values
 		"""
@@ -116,8 +116,8 @@ class QLearningAgent(Agent):
 					# initialize the q values
 					self.qDict[key] = 5.0
 				else:
-					self.qDict[key] = self.qDict[key] + self.alpha * (self.reward + self.gamma*self.getMaxQ(self.nextState) - self.qDict[key])
-				#self.qlearning(self.state, self.action, self.new_state, self.reward)
+					#self.qDict[key] = self.qDict[key] + self.alpha * (self.reward + self.gamma*self.getMaxQ(self.nextState) - self.qDict[key])
+					self.qlearning(self.state, self.action, self.new_state, self.reward)
 			self.action = action
 			self.state = self.new_state
 			self.reward = new_reward
