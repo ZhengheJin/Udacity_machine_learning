@@ -1,4 +1,5 @@
 import random
+import sys
 from environment import Agent, Environment
 from planner import RoutePlanner
 from simulator import Simulator
@@ -20,7 +21,7 @@ class LearningAgent(Agent):
         
         self.qDict = dict()
         self.alpha = 0.9 # learning rate
-        self.epsilon = 0.05 # probability of flipping the coin
+        self.epsilon = 0.1 # probability of flipping the coin
         self.gamma = 0.01
         
         self.possible_actions = Environment.valid_actions
@@ -120,7 +121,7 @@ class LearningAgent(Agent):
         self.reward = new_reward
         self.cum_reward = self.cum_reward + new_reward
         self.moves += 1
-        #print "LearningAgent.update(): deadline = {}, inputs = {}, action = {}, reward = {}".format(deadline, inputs, action, reward)  # [debug]
+        print "LearningAgent.update(): deadline = {}, inputs = {}, action = {}, reward = {}".format(deadline, inputs, action, new_reward)  # [debug]
 
 
 def run():
@@ -136,7 +137,7 @@ def run():
     sim = Simulator(e, update_delay=0.001, display=False)  # create simulator (uses pygame when display=True, if available)
     # NOTE: To speed up simulation, reduce update_delay and/or set display=False
 
-    sim.run(n_trials=500)  # run for a specified number of trials
+    sim.run(n_trials=100)  # run for a specified number of trials
     # NOTE: To quit midway, press Esc or close pygame window, or hit Ctrl+C on the command-line
 
 
