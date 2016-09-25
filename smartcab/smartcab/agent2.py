@@ -22,7 +22,7 @@ class LearningAgent(Agent):
         self.qDict = dict()
         self.alpha = 0.9 # learning rate
         self.epsilon = 0.1 # probability of flipping the coin
-        self.gamma = 0.01
+        self.gamma = 0.1
         
         self.possible_actions = Environment.valid_actions
         self.action = None
