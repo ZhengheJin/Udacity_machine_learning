@@ -21,7 +21,7 @@ There are several great guides with a similar goal. Some are limited in scope, w
 * [cuDNN](#cudnn)
 * [Python Packages](#python-packages)
 * [Tensorflow](#tensorflow)
-* [Ipython notebook](#Ipython-notebook)
+* [Ipython notebook](#ipython-notebook)
 
 ### Basics
 * First, open a terminal and run the following commands to make sure your OS is up-to-date
