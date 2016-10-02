@@ -123,6 +123,7 @@ There are several great guides with a similar goal. Some are limited in scope, w
 
 ### Ipython notebook
 * Ipython and notebook is installed through pip.
+        python -m tensorflow.models.image.mnist.convolutional
         sudo pip install pip --upgrade
         sudo pip install ipython --upgrade
         sudo pip install ipython[all] --upgrade
