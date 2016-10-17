@@ -1,0 +1,10 @@
+*.mat
+*.tar.gz
+*.ckpt
+*.meta
+*.pickle
+checkpoint
+extra
+test
+train
+*.convnet
